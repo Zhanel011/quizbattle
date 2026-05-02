@@ -4,15 +4,11 @@ const getAllUsers = async (req, res) => {
   try {
     const requester = req.user;
     let query;
-
     if (requester.role === 'admin' || requester.role === 'moderator') {
-      // Admin/moderator видят всех
       query = 'SELECT id, email, username, role, total_score, games_played, games_won, created_at FROM users ORDER BY total_score DESC';
     } else {
-      // Обычный пользователь видит только других пользователей (не admin/moderator)
       query = "SELECT id, email, username, role, total_score, games_played, games_won, created_at FROM users WHERE role = 'user' ORDER BY total_score DESC";
     }
-
     const result = await pool.query(query);
     res.json(result.rows);
   } catch (err) {
@@ -40,7 +36,6 @@ const deleteUser = async (req, res) => {
     if (requester.role !== 'admin' && requester.role !== 'moderator')
       return res.status(403).json({ message: 'Access denied' });
 
-    // Moderator can only delete regular users
     const target = await pool.query('SELECT role FROM users WHERE id = $1', [req.params.id]);
     if (target.rows.length === 0)
       return res.status(404).json({ message: 'User not found' });
@@ -58,7 +53,6 @@ const deleteUser = async (req, res) => {
   }
 };
 
-// Only admin can change roles
 const changeRole = async (req, res) => {
   try {
     const requester = req.user;
@@ -83,23 +77,4 @@ const changeRole = async (req, res) => {
   }
 };
 
-const changeRole = async (req, res) => {
-  try {
-    const requester = req.user;
-    if (requester.role !== 'admin')
-      return res.status(403).json({ message: 'Only admin can change roles' });
-
-    const { role } = req.body;
-    if (!['user', 'moderator'].includes(role))
-      return res.status(400).json({ message: 'Invalid role' });
-
-    await pool.query('UPDATE users SET role = $1 WHERE id = $2', [role, req.params.id]);
-    res.json({ message: 'Role updated successfully' });
-  } catch (err) {
-    res.status(500).json({ message: 'Server error' });
-  }
-};
-
 module.exports = { getAllUsers, getUserById, deleteUser, changeRole };
-
-
