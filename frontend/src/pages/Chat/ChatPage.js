@@ -56,7 +56,7 @@ function ChatPage() {
       }
     };
     return () => ws.current?.close();
-  }, [user.id]);
+   }, [user.id, navigate]);
 
   useEffect(() => {
     if (!selectedUser) return;

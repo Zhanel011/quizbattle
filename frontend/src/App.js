@@ -13,10 +13,7 @@ import AdminPage from './pages/Admin/AdminPage';
 import ProfilePage from './pages/Profile/ProfilePage';
 
 // Только для авторизованных
-const PrivateRoute = ({ children }) => {
-  const { user } = useAuth();
-  return user ? children : <Navigate to="/" />;
-};
+
 
 // Только для admin и moderator
 const AdminRoute = ({ children }) => {
