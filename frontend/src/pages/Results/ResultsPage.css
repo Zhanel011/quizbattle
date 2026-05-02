@@ -1,0 +1,269 @@
+.results-container {
+  min-height: 100vh;
+  background: #0f0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.results-loading {
+  min-height: 100vh;
+  background: #0f0f1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: rgba(255,255,255,0.5);
+  font-size: 18px;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(99,102,241,0.2);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.results-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.results-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.1;
+}
+
+.r1 {
+  width: 400px; height: 400px;
+  background: #6366f1;
+  top: -100px; left: -100px;
+}
+
+.r2 {
+  width: 300px; height: 300px;
+  background: #10b981;
+  bottom: -100px; right: -100px;
+}
+
+.results-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 600px;
+  width: 100%;
+  padding: 48px 32px;
+}
+
+.results-emoji {
+  font-size: 64px;
+}
+
+.results-content h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.results-topic {
+  color: rgba(255,255,255,0.4);
+  font-size: 15px;
+}
+
+.results-topic span {
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.score-circle {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.score-circle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.score-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.score-pct {
+  font-size: 15px;
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.results-stats {
+  display: flex;
+  gap: 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 28px 40px;
+}
+
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 70px;
+}
+
+.rstat-icon {
+  font-size: 22px;
+}
+
+.rstat-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.rstat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.versus-result {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 28px 32px;
+  width: 100%;
+  text-align: center;
+}
+
+.versus-result h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.versus-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.versus-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+}
+
+.versus-player.winner {
+  background: rgba(99,102,241,0.15);
+  border: 1px solid rgba(99,102,241,0.3);
+}
+
+.vp-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.vp-score {
+  font-size: 22px;
+  font-weight: 800;
+  color: #6366f1;
+}
+
+.winner-badge {
+  font-size: 12px;
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.vs-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.3);
+}
+
+.draw-text {
+  margin-top: 16px;
+  color: rgba(255,255,255,0.5);
+  font-size: 15px;
+}
+
+.results-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}

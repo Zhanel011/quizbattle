@@ -1,0 +1,212 @@
+.profile-container {
+  min-height: 100vh;
+  background: #0f0f1a;
+}
+
+.profile-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Profile card */
+.profile-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #10b981);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.profile-email {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+}
+
+.profile-role-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  width: fit-content;
+}
+
+.profile-joined {
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+  align-self: flex-start;
+}
+
+/* Stats */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.pstat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.pstat-card:hover {
+  border-color: rgba(99,102,241,0.3);
+}
+
+.pstat-icon { font-size: 28px; }
+
+.pstat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.pstat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Game history */
+.profile-history {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.history-title {
+  padding: 20px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.history-loading,
+.history-empty {
+  padding: 40px;
+  text-align: center;
+  color: rgba(255,255,255,0.3);
+  font-size: 15px;
+}
+
+.history-empty span {
+  color: #6366f1;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.history-empty span:hover {
+  text-decoration: underline;
+}
+
+.history-header {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.04);
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.history-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.history-row:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.history-topic {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.history-mode {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  text-transform: capitalize;
+}
+
+.history-score {
+  font-size: 14px;
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.history-time {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+.history-result {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.history-result.win { background: rgba(16,185,129,0.15); color: #10b981; }
+.history-result.loss { background: rgba(239,68,68,0.15); color: #f87171; }
+.history-result.draw { background: rgba(245,158,11,0.15); color: #fbbf24; }
+.history-result.solo { background: rgba(99,102,241,0.15); color: #818cf8; }
+.history-result.cancelled { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.3); }
+
